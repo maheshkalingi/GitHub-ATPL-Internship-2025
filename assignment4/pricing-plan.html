@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plan</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            background-color: lightgray;
+            padding:20px;
+            grid-gap:10px;
+        }
+        .cards{
+            background-color: white;
+            border:1px solid black;
+            text-align: center;
+            padding-bottom:5px;
+            border-radius: 5px;
+            
+        }
+        .btn{
+            background-color:blue;
+            padding:8px;
+            border:1px solid black;
+            margin-bottom: 10px;
+            color:white;
+            border-radius: 5px;
+            
+        }
+        .container p{
+            font-size:30px;
+            color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+    <div class="container">
+        <div class="cards">
+            <h3>Basic</h3>
+            <p><b>$19/mo</b></p>
+            <input  class="btn" type="submit" value="Choose Plan">
+        </div>
+
+        <div class="cards">
+            <h3>Standard</h3>
+            <p>$39/mo</p>
+            <input  class="btn" type="submit" value="Choose Plan">
+        </div>
+
+        <div class="cards">
+            <h3>Premium</h3>
+            <p>$79/mo</p>
+            <input  class="btn" type="submit" value="Choose Plan">
+        </div>
+    </div>
+    </form>
+</body>
+</html>
