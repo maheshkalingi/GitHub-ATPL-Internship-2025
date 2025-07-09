@@ -16,12 +16,8 @@
             height:100vh;
              
         }
-        .cont{
-  background-color: black;
-  color:white;text-align: center;
-        }
         .guesscontainer{
-            
+            background-color:black;
             color:white;
             display: flex;
             align-items: center;
@@ -47,14 +43,12 @@
     </style>
 </head>
 <body>
-    <div class="cont">
     <div class="guesscontainer">
         <label for="enum" >Enter the Number:</label>
         <input type="number" id="inputNumber">
         <button type="submit " id="guessSubmit" onClick="myFunction()" >Guess</button><br><br>
-     
     </div>
-       <h2 id="ans"></h2></div>
+    <div class="answer"><h2 id="ans"></h2></div>
     <script>
         let randNumber=Math.floor((Math.random()*99+1));
        
