@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 50px;
+       display:flex;
+      text-align: center;
+      justify-content: center;
+    }
+    #quote {
+      font-size: 24px;
+      margin: 20px;
+      color:green;
+    }
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+       border-radius:5px;
+    }
+    .container{
+      background-color: black;
+      color:white;
+      padding:20px;
+      margin:10px;
+      width:fit-content;
+      display:flex;
+      text-align: center;
+      justify-content: center;
+      border-radius:10px;
+    }
+    
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="quotecontainer">
+  <h1>Random Quote Generator</h1>
+  <div id="quote"></div>
+  <button onclick="generateQuote()">New Quote</button>
+  </div>
+</div>
+  <script>
+
+    const quotes = [
+      "Believe in yourself.",
+      "You are stronger than you think.",
+      "Every day is a fresh start.",
+      "Don't give up.",
+      "Keep going, you're doing great!",
+      "Success is the sum of small efforts.",
+      "Stay positive, work hard, make it happen."
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const randomQuote = quotes[randomIndex];
+      document.getElementById("quote").textContent = randomQuote;
+    }
+  </script>
+
+</body>
+</html>
