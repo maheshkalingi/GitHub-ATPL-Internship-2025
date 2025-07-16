@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<body>
+    <input type="text" placeholder="enter your task to add" id="text" required>
+    <button onClick="myFunction()">Add</button>
+    <div id="res"></div>
+    <script>
+function myFunction(){
+    let userTask=document.getElementById("text").value;
+    let divtag=document.createElement("div");
+    let litag=document.createElement("li");
+    litag.textContent=usertask;
+    divtag.appendChild(li);
+    document.getElementById("res").textContent=divtag;
+    document.body.appendChild(div);
+}
+ 
+    </script>
+</body>
+</html>

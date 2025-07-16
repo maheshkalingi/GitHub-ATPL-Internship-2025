@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <form action="#" method="post" id="regForm">
+
+            <label for="user">Name:</label>
+           <input type="text" placeholder="enter your name" id="uname" autocomplete="off">
+            <div id="nameError"></div>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="enter your email" id="email" autocomplete="off" ><br>
+            <div id="emailError"></div>
+            <label for="password">password:</label>
+            <input type="password" placeholder="enter your password" id="password" autocomplete="off" ><br>
+            <div id="passwordError"></div>
+           <button type="submit" onClick="myFunction()">Submit</button>
+
+    </form>
+   
+    <script>
+        function myFunction(){
+        let regForm=document.getElementById("regForm");
+        let userName=document.getElementById("uname");
+        let userEmail=document.getElementById("email");
+        let userPassword=document.getElementById("password");
+        let nameError=document.getElementById("nameError");
+        let emailError=document.getElementById("emailError");
+        let passwordError=document.getElementById("passwordError");
+        
+        form.addEventListener("submit",function(event) => 
+           event.preventDefault();
+            let valid=true;
+            nameError.textContent="";
+            emailError.textContent="";
+            passwordError.textContent="";
+       
+        if(userName.value.trim()===''){
+            nameError.textContent="Name is required";
+            valid=false;
+        }
+        if(userEmail.value.trim()===''){
+            emailError.textContent="Email is required";  
+            valid=false;
+        }else if(!validate(userEmail.value.trim())){
+            emailError.textContent="Please enter valid Email";
+            valid=false;
+        }
+        if(userPassword.value.trim()===''){
+            passwordError.textContent="Password is required";
+        }
+        else if(userPassword.value.length < 6){
+            passwordError.textContent="password must be atleast 6 characters";
+        }
+        if(valid){
+            alert("successfully registered");
+        }
+     );
+    }
+      function validate(mail){
+        const re=/\S+@\S+\.\S+/;
+        return re.test(mail)
+      }
+
+
+    </script>
+</body>
+</html>

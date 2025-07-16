@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+    <label for="name">Name:</label>
+    <input type="text" placeholder="enter your name" id="uname" required><br>
+    <div id="nameError"></div>
+    <label for="age">Age:</label>
+    <input type="number" placeholder="enter your age" id="age" required><br>
+    <div id="ageError"></div>
+    <button type="submit" onClick="generateProfile()">Generate Profile</button>
+    </div>
+    <div class="card">
+        <img>
+        <h3 id="cardName"></h3>
+        <p id="cardAge"></p>
+
+    </div>
+    <script>
+     function generateProfile(){
+        let  userName=document.getElementById("uname");
+        let  userAge=document.getElementById("age");
+        let nameError=document.getElementById("nameError")
+        let ageError=document.getElementById("ageError");
+        let valid=true;
+         nameError.textContent="";
+         ageError.textContent="";
+        if(userName.value.trim()===''){
+            nameError.textContent="Name is required"
+            valid=false;
+        }
+        if(userAge.textContent===''){
+            ageError.textContent="age is required";
+            valid=false;
+        }
+        if(valid){
+            let resultName=document.getElementById("h3").innerHTML=userName;
+            let resultAge=document.getElementById("cardAge").textContent=userAge;
+        }
+
+     }
+    </script>
+</body>
+</html>
