@@ -1,0 +1,73 @@
+              <!-- Task 1 -->
+
+<div class="container">
+    <h2>Interpolation And Property Binding</h2>
+    <div class="inner">
+    <h2>Welcome, {{userName}}!</h2>
+    <p>Age: {{userAge}} </p>
+    <img [src]="userImage" alt="User Image" />
+    </div>
+</div>
+
+          <!-- Task 2 -->
+
+ <div class="task2">
+    <h2>Event Binding</h2>
+    <div class="inner2">
+    <button (click)="onClick()">Click Me</button>
+    <p>{{clickMessage}}</p>
+    </div>
+ </div>
+
+         <!-- Task 3 -->
+
+  <div class="task3">
+    <h2>Two-Way Data Binding</h2>
+    <div class="inner3">
+    <input type="text"  [(ngModel)]="message" placeholder="Type a Message ....."/>
+    <p> You typed: {{message}}</p>
+    </div>
+  </div>
+
+
+        <!-- Task 4 -->
+
+<div class="task4">
+    <h2>Structural Directive - *ngIf</h2>
+    <div class="inner4">
+        <button (click)="showDetails =!showDetails">{{showDetails?'Hide':'Show'}}Details</button>
+        <div *ngIf="showDetails">
+            <p>Name:{{userName}}</p>
+            <p>Age:{{userAge}}</p>
+            <img [src]="userImage" alt="User Image"/>
+        </div>
+    </div>
+</div>
+
+          <!--Task 4.2 -->
+          <div class="task5">
+            <h2>Structural Directive - *ngFor</h2>
+            <div class="inner5">
+                <ul>
+                    <li *ngFor="let skill of skills">{{skill}}</li>
+                </ul>
+            </div>
+          </div>
+
+
+          <!-- Task 5.1 -->
+           <div class="task6">
+            <h2>Attribute Directive -[ngStyle]</h2>
+            <div class="inner6">
+                <p [ngStyle]="{color: userAge >30? 'red':'green'}">Age Highlight</p>
+            </div>
+           </div>
+ 
+
+           <!-- Task 5.2 -->
+            <div class="task7">
+                <h2>Attribute Directive -[ngClass]</h2>
+                <div class="inner7">
+                    <p [ngClass]="{'premium':isPremiumUser, 'basic':!isPremiumUser}">Account Type</p>
+                </div>
+            </div>
