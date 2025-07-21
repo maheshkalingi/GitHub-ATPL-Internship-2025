@@ -1,0 +1,12 @@
+
+<div class="main">
+    <div class="inner">
+<h1>Questions</h1>
+<div *ngFor="let m of questions">
+<p ><strong>Q:</strong>{{m.question}}</p>
+
+<div *ngIf="roleContent === 'admin'">
+ <p><strong>A:</strong>{{m.answer}}</p>
+</div>
+</div>
+</div>
