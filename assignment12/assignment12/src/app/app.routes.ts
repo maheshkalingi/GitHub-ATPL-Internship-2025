@@ -6,6 +6,7 @@ import { Task4 } from './task4/task4';
 import { Task5 } from './task5/task5';
 import { Task6 } from './task6/task6';
 import { PageNotFound } from './page-not-found/page-not-found';
+import { Task7 } from './task7/task7';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
     {path:'task4',component:Task4},
     {path:'task5',component:Task5},
     {path:'task6',component:Task6},
+    {path:'task7',component:Task7},
     {path:'**',component:PageNotFound},
     
 
