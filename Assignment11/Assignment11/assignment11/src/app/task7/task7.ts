@@ -9,7 +9,7 @@ import { HighlightOnHover } from '../highlight-on-hover';
   styleUrl: './task7.css'
 })
 export class Task7 {
-userRole:'admin'|'user1'|'user2'='user1';
+userRole:'admin'|'user1'|'user2'='user2';
 
  questions=[
     {question:'What is Angular?',answer:'A front-end Framework by Google.',show:false},
