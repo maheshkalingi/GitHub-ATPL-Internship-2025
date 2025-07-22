@@ -1,0 +1,17 @@
+<div class="container">
+    
+<div class="inner">
+<button (click)="showUser=!showUser">{{showUser ?'Active Users':'Inactive Users'}}</button>
+
+ <div *ngIf="showUser"> 
+       <div *ngFor="let u of users">
+            <h3 *ngIf="u.status ==='active'">{{u.name}} - Last login: {{u.login | date:'short'}}</h3>
+        </div>
+</div>
+<div *ngIf='!showUser'>
+    <div *ngFor="let u of users">
+            <h3 *ngIf="u.status ==='inactive'">{{u.name}} - Last login: {{u.login | date:'short'}}</h3>
+        </div>
+</div>
+</div>
+</div>
