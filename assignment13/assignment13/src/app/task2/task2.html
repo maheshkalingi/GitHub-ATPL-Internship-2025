@@ -1,0 +1,32 @@
+<div class="main">
+   
+   <div class="inner">
+    
+    <h2>Registration Form</h2>
+   <form #userForm="ngForm">
+    <label>User Name:</label><br>
+    <input type="text" placeholder="enter your name" name="userName" #uname="ngModel" [(ngModel)]="userObj.userName" required autocomplete="off">
+    <div class="error">
+        @if(uname.errors?.['required'] && uname.touched){
+        <span>Name is Required.</span>
+        }
+    </div>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="enter your email" name="userEmail" #email="ngModel" pattern="^[\w.+\-]+@gmail\.com$" [(ngModel)]="userObj.userEmail" required autocomplete="off"> 
+    <div class="error">
+        <span *ngIf="email.errors?.['required'] && email.touched">Email  is Required.</span>
+        <span *ngIf="email.errors?.['pattern'] && email.touched">Please Enter a Valid Email.</span>
+    </div>
+    
+
+    <label>Password:</label><br>
+    <input type="password" placeholder="enter your password " #upass="ngModel" name="userPassword" minlength="6"[(ngModel)]="userObj.userPassword"  required autocomplete="off">
+    <div class="error">
+        <span *ngIf="upass.errors?.['required'] && upass.touched">Password is Required.</span>
+        <span *ngIf="upass.errors?.['minlength'] && upass.touched">Password must Be 6 characters</span>
+    </div>
+      <button type="button"  [disabled]="userForm.invalid" (click)="onSave()">Submit</button>
+   </form>
+   </div>
+</div>

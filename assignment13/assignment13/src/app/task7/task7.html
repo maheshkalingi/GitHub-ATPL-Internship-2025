@@ -1,0 +1,79 @@
+
+<div class="main">
+   
+    <div class="inner">
+         <h2>Registration form</h2>
+        <form #userForm="ngForm">
+            <label>Full Name:</label><br>
+            <input type="text" placeholder="enter your full name" #uname="ngModel"  name="userName" [(ngModel)]="userObj.fullName" required/>
+            <div class="error">
+                @if(uname.errors?.['required'] && uname.touched){
+                <span>full name is Required.</span>
+                }
+            </div>
+            
+            <label>Email:</label><br>
+            <input type="email" placeholder="enter your email"  #uEmail="ngModel" pattern="^[\w.+\-]+@gmail\.com$"  name="userObj.userEmail"[(ngModel)]="userObj.userEmail" required/>
+            <div class="error">
+                <span *ngIf="uEmail.errors?.['required'] && uEmail.touched">Email is Required.</span>
+                <span *ngIf="uEmail.errors?.['pattern'] && uEmail.touched">Valid Format is Required.</span>
+            </div>
+
+            <label>Gender:<br>
+            <input type="radio" name="gender" value="Male" required #gend="ngModel" [(ngModel)]="userObj.genderType"/>Male<br>
+            <input type="radio" name="gender" value="FeMale" required [(ngModel)]="userObj.genderType"/>Female<br>
+            <input type="radio" name="gender" value="others" required [(ngModel)]="userObj.genderType"/>Others<br>
+           </label><br><br>
+            <div class="error">
+            @if(gend.errors?.['required'] && gend.touched){
+                <span>Course is Required</span>
+            }
+        </div>
+
+           <label>Course:</label>
+           <select  name="course" [(ngModel)]="userObj.courseType"  #cou="ngModel" required>
+            <option selected>--Select--</option>
+             <option value="Angular">Angular</option>
+             <option value="Vue">Vue</option>
+             <option value="React">React</option>
+           </select><br><br>
+        <div class="error">
+            @if(cou.errors?.['required'] && cou.touched){
+                <span>Course is Required</span>
+            }
+        </div>
+
+          <label >Comments:(Optional)</label><br>
+          <textarea placeholder="Give One Comment About this Form."></textarea><br><br>
+
+          <button type="button"  class="green"[disabled]="userForm.invalid" (click)="onSave()">Submit</button><br>
+          <button type="button"class="red" (click)="onReset(userForm)">Reset</button>
+
+        </form>
+
+
+    </div>
+   <div class="table">
+    <div *ngIf="users.length>0">
+        
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{user.Name}}</td>
+                  <td>{{user.Email}}</td>
+                  <td>{{user.gender}}</td>
+                  <td>{{user.course}}</td>
+                </tr>
+            </tbody>
+        </table> 
+
+    </div></div>
+</div>

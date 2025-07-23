@@ -1,0 +1,32 @@
+<div class="main">
+    <div class="inner">
+  <form  #form="ngForm" novalidate>
+    <h2>Login Form</h2>
+    <div>
+        <label>User Name :</label><br>
+        <input type="text" placeholder="enter your name"  name="userName" #uname="ngModel" [(ngModel)]="userName" required autocomplte="off">
+        <div class="error">
+            @if(uname.errors?.['required'] && uname.touched ){
+            <span>Name is Required</span>
+            }
+        </div>
+        
+        <label >Password :</label><br>
+       <input type="password" placeholder="enter your password"  #upass="ngModel" name="userPassword" [(ngModel)]="userPassword" required autocomplte="off">
+        <div class="error">
+            @if(upass.errors?.['required'] && upass.touched ){
+            <span>Password  is Required</span>
+            }
+        </div>
+      <button type="button" [disabled]="form.invalid" (click)="onSave()">Submit</button>
+     </div>
+   </form>
+     </div>
+
+<div *ngIf="users.length>0" >
+  <div *ngFor="let user of users" >
+ <h3>User Name : {{user.name}}</h3>
+ <h3>Password:{{user.password}}</h3></div>
+</div></div>
+
+

@@ -1,0 +1,24 @@
+<div class="main">
+  <div class="inner">
+    <h2>Simple Form</h2>
+    <form #myForm="ngForm">
+      <label>Name:</label><br>
+      <input type="text" name="name" [(ngModel)]="user.name" required autocomplete="off">
+      <br><br>
+      <label>Email:</label><br>
+      <input type="email" name="email" [(ngModel)]="user.email" required  autocomplete="off">
+      <br><br>
+      <label>Password:</label><br>
+      <input type="password" name="password" [(ngModel)]="user.password" required minlength="6"  autocomplete="off">
+      <br><br>
+
+      <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    </form>
+    <div class="state">
+      <h3>Form State:</h3>
+      <p>Valid:{{ myForm.valid }}</p>
+      <p>Touched:{{ myForm.touched }}</p>
+      <p>Dirty:{{ myForm.dirty }}</p>
+    </div>
+  </div>
+</div>
