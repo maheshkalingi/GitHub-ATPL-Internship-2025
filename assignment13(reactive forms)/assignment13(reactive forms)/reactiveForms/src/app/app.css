@@ -1,0 +1,16 @@
+.active{
+    font-weight:bold;
+    background-color: green;
+    color:white;
+}
+button{
+padding: 5px;
+margin:80px;
+border-radius:5px;
+background-color: lightseagreen;
+border:none;
+}
+button:hover{
+    background-color: blue;
+    color:white;
+}

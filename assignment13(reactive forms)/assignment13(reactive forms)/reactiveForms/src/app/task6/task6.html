@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="inner">
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <h2>Password Match</h2>
+
+  <label>Password:</label><br>
+  <input type="password" formControlName="password"><br><br>
+
+  <label>Confirm Password:</label><br>
+  <input type="password" formControlName="confirmPassword"><br><br>
+
+<div *ngIf="userForm.errors?.['passwordMismatch'] && userForm.touched">
+  <span>passwords are not matched</span>
+</div>
+
+
+  <button type="submit">Submit</button>
+</form></div>
+</div>

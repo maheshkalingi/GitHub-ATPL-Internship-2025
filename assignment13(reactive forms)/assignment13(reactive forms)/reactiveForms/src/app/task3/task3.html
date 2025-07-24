@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="inner">
+    <form [formGroup]="userForm">
+        <label>User Name:</label><br>
+        <input type="text" placeholder="Enter your User Name" formControlName="userName"/><br>
+         <div class="error">
+            @if(userForm.controls['userName'].errors?.['required'] && userForm.controls['userName'].touched){
+               <span>UserName is Required</span>
+            }
+         </div>
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter your Email" formControlName="userEmail"/><br>
+        @if(userForm.controls['userEmail'].touched){
+        <div class="error">
+            @if(userForm.controls['userEmail'].errors?.['required']){
+                <span>Email is required</span>
+            }
+            @if(userForm.controls['userEmail'].errors?.['pattern']){
+                <span>please enter a valid format</span>
+            }
+        </div>
+    }
+         <label>Password:</label><br>
+        <input type="password" placeholder="Enter your password" formControlName="userPassword"/><br>
+        <div class="error">
+            @if(userForm.controls['userPassword'].errors?.['required'] && userForm.controls['userPassword'].touched){
+                <span>Password is Required</span>
+            }
+             @if(userForm.controls['userPassword'].errors?.['minlength'] && userForm.controls['userPassword'].touched){
+                <span>Password must be atleast 6 characters</span>
+            }
+        </div>
+
+        <button type="button" [disabled]="userForm.invalid"(click)="onSave()">Register</button>
+        <button type="button" (click)="onReset()">Reset</button>
+
+    </form></div>
+</div>
+

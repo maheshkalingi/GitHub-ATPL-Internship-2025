@@ -1,0 +1,20 @@
+<div class="main">
+    <div class="inner">
+    <form  [formGroup]="userForm">
+        <h3>User Information</h3>
+        <label>User Name:</label><br>
+        <input type="text" placeholder="Enter your User Name" formControlName="userName" required/><br>
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter your Email" formControlName="userEmail" required/><br>
+       <div formGroupName="address">
+        <h3>Address</h3>
+        <label>City:</label><br>
+        <input type="text" placeholder="Enter your Address" formControlName="city" required/><br>
+        <label>Street:</label><br>
+        <input type="text" placeholder="Enter your street Name" formControlName="street" required/><br>
+        <label>Zipcode:</label><br>
+        <input type="number" placeholder="Enter your zipcode" formControlName="zip" required/><br>
+       </div>
+       <button type="button" (click)="onSave()" [disabled]="userForm.invalid">Submit</button>
+    </form></div>
+</div>

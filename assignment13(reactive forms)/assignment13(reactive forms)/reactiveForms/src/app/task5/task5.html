@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="inner">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="phoneNumbers">
+           <div *ngFor="let phone of phoneNumbers.controls;let i=index;">
+            <label>Phone Number:</label><br>
+                <input [formControlName]="i" type="text" placeholder="enter your phone nummber"/>
+              <div class="error" *ngIf="phone.invalid && phone.touched">
+                    Phone number is required
+              </div>
+              <button type="button" (click)="removePhoneNumber(i)" *ngIf="phoneNumbers.length > 1">
+        Remove
+      </button>
+            </div>
+        </div>
+  <button type="button" (click)="addPhoneNumber()">Add </button>
+<button type="submit">Submit</button>
+    </form></div>
+</div>
