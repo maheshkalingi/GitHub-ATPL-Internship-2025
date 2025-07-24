@@ -30,8 +30,7 @@ onSubmit() {
     if (this.userForm.valid) {
       alert(' Success! Passwords match.');
     } else {
-      alert(' Error: Passwords do not match or fields are empty.');
-      this.userForm.markAllAsTouched();
+      alert('  Passwords do not matched.');
     }
   }
 }
