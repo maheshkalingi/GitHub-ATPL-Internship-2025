@@ -33,11 +33,11 @@ export class Task5 {
 
   isDarkTheme = false;
 
-  columns: string[] = ['position', 'name'];
+  columns: string[] = ['position', 'name','Role','Age'];
   data = [
-    { position: 1, name: 'mahesh' },
-    { position: 2, name: 'naveen' },
-    { position: 3, name: 'deelip' }
+    { position: 1, name: 'mahesh' ,Role:'developer',age:21},
+    { position: 2, name: 'naveen' ,Role:'tester',age:22},
+    { position: 3, name: 'deelip'  ,Role:'HR',age:23}
   ];
 
   constructor(private dialog: MatDialog) {}
