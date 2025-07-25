@@ -1,0 +1,21 @@
+<mat-toolbar>
+    <button matIconButton
+    (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>MaterialUI</span>
+</mat-toolbar>
+
+
+<mat-drawer-container class="sideContainer" autosize>
+  <mat-drawer #drawer class="sidenavContainer" mode="side">
+    <mat-list role="list">
+  <mat-list-item role="listitem" ><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> Dashboard</mat-list-item><mat-divider />
+  <mat-list-item role="listitem"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="settings"></mat-icon >Settings</mat-list-item><mat-divider />
+  <mat-list-item role="listitem"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>Logout</mat-list-item><mat-divider />
+</mat-list>
+  </mat-drawer>
+</mat-drawer-container>
+
+
+

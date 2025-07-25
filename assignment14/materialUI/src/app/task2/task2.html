@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="task1">
+        <h2>Login</h2>
+    <form [formGroup]="userForm">
+        <mat-form-field >
+                <mat-label>Enter your Email</mat-label>
+                <input matInput placeholder="Mahesh@gmail.com"  formControlName="email"/>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+            @if(userForm.controls['email'].errors?.['required'] && userForm.controls['email'].touched){
+                <mat-error>Email is Required</mat-error>
+            } 
+            @if(userForm.controls['email'].errors?.['email'] && userForm.controls['email'].touched){
+                <mat-error>Email is not valid</mat-error>
+            }</mat-form-field><br>
+
+            <mat-form-field >
+                <mat-label>Enter your Password</mat-label>
+                <input matInput placeholder="Enter your Password" formControlName="password"/>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                @if(userForm.controls['password'].errors?.['required'] &&userForm.controls['password'].touched){
+                    <mat-error>
+                        Password is Required
+                    </mat-error>
+                }
+                @if(userForm.controls['password'].errors?.['minlength'] &&userForm.controls['password'].touched){
+                    <mat-error>
+                        Password  must be atleast 5 characters
+                    </mat-error>
+                }
+            </mat-form-field><br><br>
+              <button matButton="tonal"  [disabled]="userForm.invalid">Submit</button>
+            
+    </form></div>
+    
+
+
+    
+   
+</div>

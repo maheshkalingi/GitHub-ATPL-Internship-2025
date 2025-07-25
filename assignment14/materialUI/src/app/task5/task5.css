@@ -1,0 +1,16 @@
+.dashboard-container {
+  height: 100vh;
+}
+
+.dashboard-content {
+  padding: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.table-section {
+  margin: 20px 0;
+}
+
