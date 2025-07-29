@@ -9,6 +9,9 @@ import { Dashboard } from './Task3/dashboard/dashboard';
 import { Activity } from './Task3/activity/activity';
 import { Settings } from './Task3/settings/settings';
 import { Profile } from './Task3/profile/profile';
+import { AdminComponent } from './task 4/admin-component/admin-component';
+import { authGuardGuard } from './guards/auth-guard-guard';
+import { LogIN } from './log-in/log-in';
 
 export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
@@ -17,9 +20,14 @@ export const routes: Routes = [
     {path:'contact',component:Contact},
     {path:'products/:id',component:ProductDetails},
     {path:'productsList',component:ProductList},
-    {path:'dashboard',component:Dashboard},
-    {path:'dashboard/activity',component:Activity},
-    {path:'dashboard/settings',component:Settings},
-    {path:'dashboard/profile',component:Profile},
+    {path:'dashboard',component:Dashboard,
+    children:[
+        {path:'activity',component:Activity},
+    {path:'settings',component:Settings},
+    {path:'profile',component:Profile}
+    ]
+ },
+ {path:'adminComponent',component:AdminComponent,canActivate:[authGuardGuard]},
+    {path:'login',component:LogIN},
     {path:'**',component:PageNotFound}
 ];

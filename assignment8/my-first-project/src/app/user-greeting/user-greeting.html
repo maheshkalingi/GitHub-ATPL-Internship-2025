@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="inner">
+    <div>
+    <h2>User Greeting</h2>
+   </div>
+
+<form (ngSubmit)="onSubmit()" >
+    <div>
+    <label>Name:</label><br>
+
+    <input type="text" name="name" [(ngModel)]="user.name"  autocomplete="off" required/><br>
+    
+   <div *ngIf="nameError" class="error">{{ nameError }}</div><br>
+</div>
+
+
+<div>
+    <label>Age:</label><br />
+
+    <input type="number" name="age" [(ngModel)]="user.age"  autocomplete="off" required/>
+    <br>
+    <div *ngIf="ageError" class="error">{{ ageError }}</div><br>
+</div>
+    <button type="submit">Submit</button>
+</form>
+</div>
+</div>

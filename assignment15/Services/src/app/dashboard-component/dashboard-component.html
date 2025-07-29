@@ -1,0 +1,22 @@
+
+<table>
+<thead>
+    <tr>
+        <th>City</th>
+        <th>Temparature</th>
+        <th>Description
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngIf="weather">
+        <td> {{weather.city}}</td>
+        <td> {{weather.temparature}}</td>
+        <td> {{weather.description}}</td>
+    </tr>
+</tbody>
+</table>
+
+<div *ngIf="errorMessage" >
+<p style="color: red;">{{ errorMessage }}</p>
+</div>

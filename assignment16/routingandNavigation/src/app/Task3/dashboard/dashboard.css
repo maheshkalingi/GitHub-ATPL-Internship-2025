@@ -1,0 +1,21 @@
+ul{
+    list-style-type: none;
+    background-color: green;
+    width:fit-content;
+    text-align:center;
+    padding:10px;
+    margin:10px;
+
+}
+li a{
+    text-decoration:none;
+    display:block;
+}
+*{
+    margin:0;
+    padding:0
+}
+li a:hover{
+    background-color: black;
+    color:white;
+}
