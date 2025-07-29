@@ -12,6 +12,8 @@ import { Profile } from './Task3/profile/profile';
 import { AdminComponent } from './task 4/admin-component/admin-component';
 import { authGuardGuard } from './guards/auth-guard-guard';
 import { LogIN } from './log-in/log-in';
+import { Admin } from './admin/admin';
+import { AdminModule } from './admin/admin-module';
 
 export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
@@ -29,5 +31,6 @@ export const routes: Routes = [
  },
  {path:'adminComponent',component:AdminComponent,canActivate:[authGuardGuard]},
     {path:'login',component:LogIN},
+     {path:'admin',loadChildren:()=>import('./admin/admin-module').then(c=>c.AdminModule)},
     {path:'**',component:PageNotFound}
 ];
