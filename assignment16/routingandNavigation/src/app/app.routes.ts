@@ -32,5 +32,6 @@ export const routes: Routes = [
  {path:'adminComponent',component:AdminComponent,canActivate:[authGuardGuard]},
     {path:'login',component:LogIN},
      {path:'admin',loadChildren:()=>import('./admin/admin-module').then(c=>c.AdminModule)},
+     {path:'user',loadChildren:()=>import('./user/user-module').then(c=>c.UserModule)},
     {path:'**',component:PageNotFound}
 ];
