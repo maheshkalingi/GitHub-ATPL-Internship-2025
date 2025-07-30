@@ -1,7 +1,7 @@
 <div class="main">
     <div class="inner">
-    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
-        <h2>Add User</h2>
+    <form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+        <h2>update User</h2>
         <label>ID:</label><br>
         <input type="number" placeholder="enter your Id" formControlName="id"/><br><br>
        <label>UserName:</label><br>
@@ -12,3 +12,4 @@
        <button (click)="onCancel()">Cancel</button>
     </form></div>
 </div>
+

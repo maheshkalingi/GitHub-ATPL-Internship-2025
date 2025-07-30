@@ -8,6 +8,7 @@
     <th>Name</th>
     <th>EMail</th>
     <th>Delete</th>
+    <th>Update</th>
 </tr>
     </thead>
     <tbody>
@@ -15,9 +16,11 @@
             <td>{{data.id}}</td>
             <td>{{data.name}}</td>
             <td>{{data.email}}</td>
-            <td><button (click)="onDelete(data.id)">Delete</button></td>
+            <td><button  (click)="onDelete(data.id)">Delete</button></td>
+            <td><button id="upda" (click)="onUpdate(data.id)">Update</button></td>
         </tr>
+        <button  id="addbtn" (click)="addNewUser()">Add User</button>
     </tbody>
-</table>
-<button (click)="addNewUser()">Add User</button>
+</table><br><br>
+
 </div>

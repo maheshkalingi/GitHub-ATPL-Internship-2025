@@ -26,6 +26,13 @@ addNewUser(){
 this.router.navigateByUrl('add');
 }
 onDelete(id:number){
-this.crud.dataDelete(id);
+this.crud.dataDelete(id).subscribe(()=>{
+  alert('user data deleted successfully!');
+  this.getAllData();
+});
+}
+
+onUpdate(id:number){
+  this.router.navigate(['update',id]);
 }
 }

@@ -7,13 +7,25 @@ import { Iuser } from './iuser';
 })
 export class CrudService {
 
-  base_url:string="https://ca1ab72792a0a4eb58d9.free.beeceptor.com/api/users";
+  base_url:string=" http://localhost:3000/User";
   constructor(private http:HttpClient){}
 
   getData(){
      return this.http.get<Iuser[]>(this.base_url);
   }
   dataDelete(id:number){
-   this.http.delete(`${this.base_url}/${id}`);
+   return this.http.delete(`${this.base_url}/${id}`);
   }
+
+  postData(data:Iuser){
+    return this.http.post(this.base_url,data)
+  }
+  getDatabyId(id: number) {
+    return this.http.get<Iuser>(`${this.base_url}/${id}`);
+  }
+putDatabyId(id:number,data:Iuser){
+  return this.http.put(`${this.base_url}/${id}`,data);
+}
+
+  
 }
