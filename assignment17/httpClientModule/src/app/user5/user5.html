@@ -1,0 +1,8 @@
+<div class="container">
+<h2>Product List</h2>
+<ul *ngIf="products.length > 0;">
+  <li *ngFor="let product of products" style="margin-bottom: 20px;">
+    <strong>{{ product.title }}</strong><br />
+    Price: ₹{{ product.price }}<br />
+  </li>
+</ul></div>

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Iuser } from './iuser';
+import { Observable,of } from 'rxjs';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,17 @@ export class CrudService {
   }
 putDatabyId(id:number,data:Iuser){
   return this.http.put(`${this.base_url}/${id}`,data);
+}
+getUserProfile(): Observable<any> {
+  const shouldFail = Math.random() < 0.5;
+  if (shouldFail) {
+    return throwError(() => new Error('Random API Failure'));
+  }
+  return of({
+    name: 'Mahesh',
+    age: 21,
+    email: 'mahesh@example.com'
+  });
 }
 
   
