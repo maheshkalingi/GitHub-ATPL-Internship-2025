@@ -38,6 +38,7 @@ getUserProfile(): Observable<any> {
     age: 21,
     email: 'mahesh@example.com'
   });
+  
 }
 
   
