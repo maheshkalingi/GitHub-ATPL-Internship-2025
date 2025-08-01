@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="userForm">
+        <label>UserName:</label><br>
+        <input type="text" placeholder="Enter your name"  formControlName="userName"/>
+        <div class="error">
+            @if(userForm.controls['userName'].errors?.['required'] && userForm.controls['userName'].touched){
+                <span>User name is required</span>
+            }
+        </div>
+        <label>Password:</label><br>
+        <input type="password" placeholder="Enter your Password" formControlName="password"/>
+        <div class="error">
+             @if(userForm.controls['password'].errors?.['required'] && userForm.controls['password'].touched){
+                <span>User Password is required</span>
+            }
+        </div>
+        <button  [disabled]="userForm.invalid" (click)="onSubmit()">Submit</button>
+        <button   (click)="logOut()">LogOut</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="container" >
+    <div class="inner">
+        <h2>Light/Dark</h2>
+    <form [formGroup]="userForm">
+        <label>THEME:</label><br>
+        <input type="text" placeholder="enter your theme Light/Dark" formControlName="colorTheme"/>
+        <div class="error">
+            @if(userForm.controls['colorTheme'].errors?.['required'] && userForm.controls['colorTheme'].touched ){
+                <span>Enter the Dark/Light Theme </span>
+            }
+        </div>
+        <button  type="button" (click)="onSubmit()" [disabled]="userForm.invalid">Submit</button>
+        <button  (click)="clear()" class="red">Clear Theme</button>
+    </form></div>
+</div>

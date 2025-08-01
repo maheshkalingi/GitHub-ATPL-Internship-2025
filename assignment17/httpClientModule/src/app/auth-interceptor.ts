@@ -16,7 +16,5 @@ if (req.url.includes('/login')) {
     });
     return next(authReq);
   }
-
-
   return next(req);
 };
