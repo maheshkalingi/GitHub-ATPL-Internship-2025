@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 @Component({
   selector: 'app-local-storage',
@@ -6,18 +6,23 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './local-storage.html',
   styleUrl: './local-storage.css'
 })
-export class LocalStorage {
+export class LocalStorage implements OnInit {
   theme!: string;
   userForm:FormGroup=new FormGroup({
     colorTheme:new FormControl('',[Validators.required])
   })
 
-  constructor(){
-    const storedTheme = localStorage.getItem('theme');
-    this.userForm.value.colorTheme=storedTheme;
-
-
-    
+  constructor(){}
+ngOnInit(): void {
+  const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      this.userForm.patchValue({ colorTheme: storedTheme });
+      this.applyTheme(storedTheme);
+    } 
+} 
+  applyTheme(theme: string) {
+    document.body.className = '';
+    document.body.classList.add(theme.toLowerCase());
   }
   onSubmit(){
     const formVal=this.userForm.value;

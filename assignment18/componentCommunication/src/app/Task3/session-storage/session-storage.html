@@ -15,6 +15,10 @@
             }
         </div>
         <button  [disabled]="userForm.invalid" (click)="onSubmit()">Submit</button>
-        <button   (click)="logOut()">LogOut</button>
     </form>
+
+    <div class="welcomeBlock">
+        <h2>Welcome, {{ userName }}!</h2>
+    <button type="button" (click)="logOut()">LogOut</button>
+    </div>
 </div>
