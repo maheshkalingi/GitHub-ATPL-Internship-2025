@@ -1,0 +1,19 @@
+<div class="conatainer">
+    <div class="parent">
+            <h2>Parent Component</h2>
+        <Label>Select a Student:</Label>
+        <select  [(ngModel)]="selectedStudent" (change)="onStudentChange()">
+            <option selected disabled>Select</option>
+            <option *ngFor="let student of studentNames"  [value]="student" >{{student}}</option>
+        </select>
+      <h3>{{childMessage}}</h3>
+    </div>
+
+
+<div class="child">
+    <h2>Child Component</h2>
+    <app-bonus-child [childMessage]="selectedStudent" (msgToParent)="reciever($event)"></app-bonus-child>
+</div>
+
+
+</div>
