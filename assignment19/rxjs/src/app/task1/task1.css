@@ -1,0 +1,21 @@
+
+.container {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.nz-input-group {
+  width: 100%;
+}
+
+input[nz-input] {
+  height: 36px;
+  font-size: 14px;
+  padding-left: 12px;
+}
+
+.nz-input-group-suffix i {
+  font-size: 18px;
+  color: #1890ff;
+  cursor: pointer;
+}

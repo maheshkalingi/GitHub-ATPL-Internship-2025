@@ -1,0 +1,24 @@
+<div class="container">
+<button nz-button nzType="primary" (click)="reload()">Reload</button>
+<nz-table
+  [nzData]="users"
+  [nzFrontPagination]="false"
+  [nzPageSize]="5"
+  [nzLoading]="loading"
+>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+</nz-table>
+</div>

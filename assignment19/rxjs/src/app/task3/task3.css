@@ -1,0 +1,22 @@
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+button[nz-button] {
+  margin-bottom: 20px;
+  width: 120px;
+  height: 36px;
+  font-size: 14px;
+}
+
+nz-table {
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px 12px;
+}

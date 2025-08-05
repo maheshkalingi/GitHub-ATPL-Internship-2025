@@ -1,0 +1,8 @@
+<div class="container">
+<button nz-button nzType="primary" (click)="double()"> Emit Sequence</button>
+
+<div *ngIf="doubledNumbers.length > 0">
+  <p>Doubled sequence: {{ doubledNumbers.join(', ') }}</p>
+</div>
+
+</div>

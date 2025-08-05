@@ -1,0 +1,27 @@
+.buttons {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.buttons button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #1890ff;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #40a9ff;
+}
+
+.buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.6);
+}

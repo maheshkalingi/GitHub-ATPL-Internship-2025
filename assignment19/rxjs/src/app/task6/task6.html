@@ -1,0 +1,18 @@
+<nz-list [nzDataSource]="products" [nzRenderItem]="item">
+  <ng-template #item let-product>
+    <nz-list-item>
+      <nz-list-item-meta
+        [nzTitle]="
+          product.name
+        "
+      >
+      </nz-list-item-meta>
+      <button nz-button nzType="link" (click)="onProductClick(product.id)">
+        Load Details
+      </button>
+      <div *ngIf="detailsResults[product.id]">
+        {{ detailsResults[product.id] }}
+      </div>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
