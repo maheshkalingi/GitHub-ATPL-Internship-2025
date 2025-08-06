@@ -26,7 +26,7 @@ export class Task6 {
   constructor() {
     this.productClick$
       .pipe(
-        mergeMap(id => this.simulateApiCall(id))
+        mergeMap(id => this.ApiCall(id))
       )
       .subscribe(({ id, details }) => {
         this.detailsResults[id] = details;
@@ -37,7 +37,7 @@ export class Task6 {
     this.productClick$.next(id);
   }
 
-  simulateApiCall(id: number) {
+  ApiCall(id: number) {
     const simulatedDetails = `Details for product #${id} fetched.`;
     const randomDelay = 500 + Math.floor(Math.random() * 1000);
     return of({ id, details: simulatedDetails }).pipe(delay(randomDelay));
