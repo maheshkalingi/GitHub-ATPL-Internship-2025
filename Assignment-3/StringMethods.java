@@ -35,6 +35,7 @@ class StrM{
         stm.usingReplace();
         stm.usingSubString();
         stm.usingIndexof();
+        sc.close();
 
     }
     
