@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class UniqueWords {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter");
+        System.out.println("Enter the scentence:");
         String sentence = sc.nextLine();
         String[] words = sentence.split(" ");
 
@@ -15,6 +15,6 @@ public class UniqueWords {
 
         for (String word : uniqueWords) {
             System.out.println(word);
-        }
+        }sc.close();
     }
 }
