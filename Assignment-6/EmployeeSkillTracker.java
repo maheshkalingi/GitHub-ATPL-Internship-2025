@@ -30,9 +30,9 @@ public class EmployeeSkillTracker {
 
     public static void main(String[] args) {
 
-        Set<String> skillsMahesh = new HashSet<>(Arrays.asList("Java", "SQL", "Python"));
+        Set<String> skillsMahesh = new HashSet<>(Arrays.asList("Java", "SQL", "Ruby"));
         Set<String> skillsDileep = new HashSet<>(Arrays.asList("Java", "JavaScript", "SQL"));
-        Set<String> skillsNaveen = new HashSet<>(Arrays.asList("Python", "JavaScript", "HTML"));
+        Set<String> skillsNaveen = new HashSet<>(Arrays.asList("Ruby", "JavaScript", "HTML"));
         addEmployeeSkills("Mahesh", skillsMahesh);
         addEmployeeSkills("Dileep", skillsDileep);
         addEmployeeSkills("Naveen", skillsNaveen);
@@ -41,6 +41,6 @@ public class EmployeeSkillTracker {
         System.out.println("Employees with skill " + skillToFind + ": " + employeesWithJava);
 
         Set<String> commonSkills = findCommonSkills("Mahesh", "Naveen");
-        System.out.println("Common skills between Mahesh and Naveen: " + commonSkills);
+        System.out.println("Common skills between Dileep and Naveen: " + commonSkills);
     }
 }

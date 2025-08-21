@@ -1,0 +1,10 @@
+hello: 3
+whatsapp: 1
+all: 1
+how: 1
+mahesh: 1
+!: 1
+are: 1
+hii: 1
+you: 1
+.: 1
