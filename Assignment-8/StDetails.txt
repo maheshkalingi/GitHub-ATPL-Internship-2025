@@ -1,0 +1,5 @@
+[name=Mahesh,age=21,dept=CSE,GPA=8.30]
+[name=dhileep,age=23,dept=ECE,GPA=8.30]
+[name=Naveen,age=24,dept=ECE,GPA=8.00]
+[name=Aditya,age=25,dept=mech,GPA=9.00]
+[name=Manoj,age=25,dept=CSIT,GPA=9.50]
