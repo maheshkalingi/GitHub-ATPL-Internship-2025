@@ -12,4 +12,8 @@ where student_age>(
   having s.dept_id=dept_id
   );
   
-
+ with Total as(
+  select  dept_name,count(*) as totalStudents from departments_mahesh
+  group by dept_name
+  )
+  select * from total;
