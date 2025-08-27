@@ -21,5 +21,7 @@ public static void main(String[] args) throws ClassNotFoundException, SQLExcepti
 	pst.close();
 	con.close();
 	System.out.println("--Connection closed Successfully!");
+	
    }
 }
+
