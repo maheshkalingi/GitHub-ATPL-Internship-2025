@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class AgeCalculation {
 		public static void  CalculateAge(LocalDate birthdate,LocalDate currentdate) {
 			if((birthdate!=null) && (currentdate!=null)){
-			System.out.println(Period.between(birthdate,currentdate).getYears());
-			System.out.println(Period.between(birthdate,currentdate).getMonths());
-			System.out.println(Period.between(birthdate,currentdate).getDays());
+			System.out.print(Period.between(birthdate,currentdate).getYears()+" Years"+" ");
+			System.out.print(Period.between(birthdate,currentdate).getMonths()+" Months"+" ");
+			System.out.println(Period.between(birthdate,currentdate).getDays()+" Days");
 			}
 		}
 		public static void main(String[] args) {
@@ -21,7 +21,6 @@ public class AgeCalculation {
 			int date=sc.nextInt();
 			LocalDate dob=LocalDate.of(year, month, date);
 			CalculateAge(dob,LocalDate.now());
-		
 			sc.close();
 			
 		}
