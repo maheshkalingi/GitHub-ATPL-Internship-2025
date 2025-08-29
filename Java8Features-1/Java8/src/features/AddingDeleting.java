@@ -11,8 +11,6 @@ public class AddingDeleting {
 		System.out.println("After adding of 10 days : "+afteradding);
 		LocalDate newDate=afteradding.minusMonths(2);
 	System.out.println("The new Date after deleting 2 months: "+newDate);
-	
-        
 	}
 
 }
